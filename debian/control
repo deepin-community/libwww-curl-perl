@@ -1,0 +1,33 @@
+Source: libwww-curl-perl
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders: Niko Tyni <ntyni@iki.fi>,
+           gregor herrmann <gregoa@debian.org>,
+           Ansgar Burchardt <ansgar@debian.org>,
+           Salvatore Bonaccorso <carnil@debian.org>
+Section: perl
+Testsuite: autopkgtest-pkg-perl
+Priority: optional
+Build-Depends: debhelper-compat (= 13),
+               libcurl4-gnutls-dev,
+               libmodule-install-perl,
+               libtest-cpan-meta-perl <!nocheck>,
+               libtest-pod-coverage-perl <!nocheck>,
+               libtest-pod-perl <!nocheck>,
+               perl-xs-dev,
+               perl:native
+Standards-Version: 4.5.0
+Vcs-Browser: https://salsa.debian.org/perl-team/modules/packages/libwww-curl-perl
+Vcs-Git: https://salsa.debian.org/perl-team/modules/packages/libwww-curl-perl.git
+Homepage: https://metacpan.org/release/WWW-Curl
+Rules-Requires-Root: no
+
+Package: libwww-curl-perl
+Architecture: any
+Depends: ${misc:Depends},
+         ${perl:Depends},
+         ${shlibs:Depends}
+Suggests: libcurl4-gnutls-dev
+Description: Perl bindings to libcurl
+ WWW::Curl is a collection of Perl modules which contain Perl bindings to
+ libcurl. In Debian, more information on how the curl library can be used in
+ your applications is available in the libcurl4-doc Debian package.

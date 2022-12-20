@@ -1,0 +1,3 @@
+Skip-preprocessor-symbol-only-CURL_STRICTER.patch
+curl-multiarch.patch
+WWW-Curl-4.17-RT130591.patch

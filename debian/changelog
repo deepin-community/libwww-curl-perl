@@ -1,0 +1,524 @@
+libwww-curl-perl (4.17-deepin1) unstable; urgency=medium
+
+  * Rebuild
+
+ -- Deepin Packages Builder <packages@deepin.org>  Mon, 14 Nov 2022 17:46:59 +0800
+
+libwww-curl-perl (4.17-7) unstable; urgency=medium
+
+  [ gregor herrmann ]
+  * debian/control: update Build-Depends for cross builds.
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+  * Update standards version to 4.5.0, no changes needed.
+
+  [ gregor herrmann ]
+  * Update 'DEB_BUILD_MAINT_OPTIONS = hardening=+bindnow' to '=+all'.
+  * Add more symbols to the Makefile.PL patch in
+    debian/patches/WWW-Curl-4.17-RT130591.patch.
+    Thanks to Lucas Nussbaum for the bug report. (Closes: #971107)
+  * Update years of packaging copyright.
+  * Set Rules-Requires-Root: no.
+  * Bump debhelper-compat to 13.
+
+ -- gregor herrmann <gregoa@debian.org>  Sun, 27 Sep 2020 21:32:25 +0200
+
+libwww-curl-perl (4.17-6) unstable; urgency=medium
+
+  * Add patch from CPAN RT for libcurl 7.66.0 compatibility.
+    (Closes: #941915)
+  * Annotate test-only build dependencies with <!nocheck>.
+  * Declare compliance with Debian Policy 4.4.1.
+  * Bump debhelper-compat to 12.
+  * debian/watch: use uscan version 4.
+  * Add debian/upstream/metadata.
+  * Add build dependency on libmodule-install-perl.
+  * Add debian/tests/pkg-perl/syntax-skip to enable more autopkgtests.
+  * Use HTTPS for a license URL in debian/copyright.
+
+ -- gregor herrmann <gregoa@debian.org>  Mon, 07 Oct 2019 17:09:21 +0200
+
+libwww-curl-perl (4.17-5) unstable; urgency=medium
+
+  [ Salvatore Bonaccorso ]
+  * Update Vcs-* headers for switch to salsa.debian.org
+
+  [ gregor herrmann ]
+  * autopkgtest: skip the t/new/* smoke tests, like during build.
+  * Update years of packaging copyright.
+  * Declare compliance with Debian Policy 4.2.1.
+  * Bump debhelper compatibility level to 10.
+  * Remove trailing whitespace from debian/*.
+  * Update Homepage in debian/control.
+
+ -- gregor herrmann <gregoa@debian.org>  Mon, 05 Nov 2018 22:32:40 +0100
+
+libwww-curl-perl (4.17-4) unstable; urgency=medium
+
+  * Add patch to add curl's new multiarch include path to Makefile.PL.
+    Thanks to Santiago Vila for the bug report. (Closes: #852853)
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 28 Jan 2017 22:13:04 +0100
+
+libwww-curl-perl (4.17-3) unstable; urgency=medium
+
+  [ gregor herrmann ]
+  * Rename autopkgtest configuration file(s) as per new pkg-perl-
+    autopkgtest schema.
+
+  [ Salvatore Bonaccorso ]
+  * debian/control: Use HTTPS transport protocol for Vcs-Git URI
+
+  [ gregor herrmann ]
+  * debian/copyright: change Copyright-Format 1.0 URL to HTTPS.
+
+  [ Martín Ferrari ]
+  * Remove myself from Uploaders.
+
+  [ gregor herrmann ]
+  * Remove Jonathan Yu from Uploaders. Thanks for your work!
+  * Remove Jose Luis Rivas from Uploaders. Thanks for your work!
+  * Remove Nathan Handler from Uploaders. Thanks for your work!
+  * Remove Ryan Niebur from Uploaders. Thanks for your work!
+
+  [ Salvatore Bonaccorso ]
+  * Skip preprocessor symbol only CURL_STRICTER.
+    Fixes "FTBFS: error: 'CURL_STRICTER' undeclared".
+    Thanks to Niko Tyni <ntyni@debian.org> (Closes: #843432)
+
+  [ gregor herrmann ]
+  * Update years of packaging copyright.
+  * Declare compliance with Debian Policy 3.9.8.
+
+ -- gregor herrmann <gregoa@debian.org>  Wed, 09 Nov 2016 19:24:25 +0100
+
+libwww-curl-perl (4.17-2) unstable; urgency=medium
+
+  * Team upload.
+
+  [ gregor herrmann ]
+  * Strip trailing slash from metacpan URLs.
+
+  [ Salvatore Bonaccorso ]
+  * Update Vcs-Browser URL to cgit web frontend
+
+  [ intrigeri ]
+  * Add t/20undefined_subs.t to the list of tests we run.
+  * Mark package as autopkgtest-able, and:
+    - skip most upstream tests since they require Internet access;
+    - list additional files needed by the test suite.
+  * override_dh_auto_test: use autopkgtest's skip-smoke tests blacklist,
+    instead of the previous whitelist approach.
+  * Declare compliance with Standards-Version 3.9.6.
+  * Enable the bindnow hardening build flag.
+
+ -- intrigeri <intrigeri@debian.org>  Mon, 25 May 2015 10:31:13 +0200
+
+libwww-curl-perl (4.17-1) unstable; urgency=low
+
+  [ Ansgar Burchardt ]
+  * debian/control: Convert Vcs-* fields to Git.
+
+  [ Salvatore Bonaccorso ]
+  * debian/copyright: Replace DEP5 Format-Specification URL from
+    svn.debian.org to anonscm.debian.org URL.
+
+  [ Nathan Handler ]
+  * Email change: Nathan Handler -> nhandler@debian.org
+
+  [ Salvatore Bonaccorso ]
+  * Change Vcs-Git to canonical URI (git://anonscm.debian.org)
+  * Change search.cpan.org based URIs to metacpan.org based URIs
+
+  [ intrigeri ]
+  * Update pointer to the libcurl documentation.
+
+  [ Salvatore Bonaccorso ]
+  * Imported Upstream version 4.17
+  * Update copyright years for upstream files
+  * Update License information for upstream files.
+    Upstream changed the License to MIT only, instead of dual-licensed under
+    MIT and MPL-1.0.
+  * Update copyright years for debian/* packaging files
+  * Update copyright file format to copyright-format 1.0
+  * Bump Debhelper compat level to 9.
+    Adjust versioned Build-Depends on debhelper to (>= 9.20120312~) to get
+    also all hardening build flags.
+  * Wrap and sort fields in debian/control file
+  * Declare compliance with Debian Policy 3.9.5
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Sun, 23 Feb 2014 10:40:52 +0100
+
+libwww-curl-perl (4.15-1) unstable; urgency=low
+
+  [ Ansgar Burchardt ]
+  * Update my email address.
+
+  [ Salvatore Bonaccorso ]
+  * New upstream release
+    - Refactored constant handling and added thorough testing for
+      it. (Closes: #601694).
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Sun, 28 Nov 2010 22:20:35 +0100
+
+libwww-curl-perl (4.14-1) unstable; urgency=low
+
+  * New upstream release
+  * Update my email address.
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Mon, 25 Oct 2010 08:37:56 +0200
+
+libwww-curl-perl (4.13-1) unstable; urgency=low
+
+  * New upstream release
+  * Add myself to Uploaders.
+  * Refresh debian/copyright file.
+  * Bump Standards-Version to 3.9.1.
+
+ -- Salvatore Bonaccorso <salvatore.bonaccorso@gmail.com>  Sat, 04 Sep 2010 14:59:52 +0200
+
+libwww-curl-perl (4.12-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/copyright: Update years of copyright.
+  * debian/copyright: Formatting changes for current DEP-5 proposal.
+  * debian/copyright: Remove extra stanzas for files already covered by the
+    first stanza.
+  * Bump Standards-Version to 3.9.0 (no changes).
+  * Use source format 3.0 (quilt).
+  * Add myself to Uploaders.
+
+ -- Ansgar Burchardt <ansgar@43-1.org>  Mon, 05 Jul 2010 11:16:02 +0900
+
+libwww-curl-perl (4.11-1) unstable; urgency=low
+
+  [ Jonathan Yu ]
+  * New upstream release
+  * Removed Michael Zehrer from Uploaders (Closes: #540825)
+  * Standards-Version 3.8.3 (drop perl version dep)
+  * Drop version depends where satisfied in oldstable
+
+  [ Ryan Niebur ]
+  * Update jawnsy's email address
+  * Update ryan52's email address
+
+ -- gregor herrmann <gregoa@debian.org>  Wed, 30 Dec 2009 17:31:03 +0100
+
+libwww-curl-perl (4.09-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/control:
+    - Add myself to list of Uploaders
+
+ -- Nathan Handler <nhandler@ubuntu.com>  Thu, 09 Jul 2009 21:31:00 +0000
+
+libwww-curl-perl (4.08-1) unstable; urgency=low
+
+  [ Nathan Handler ]
+  * debian/watch: Update to ignore development releases.
+
+  [ Jonathan Yu ]
+  * New upstream release
+    + Fixes a memory leak in setopt
+    + Now checks for a minimum libcurl version (7.10.8); no changes needed
+      since stable has version 7.18.2-8lenny2
+  * Remove Module::Install dependency; only upstream authors need it
+  * Standards-Version 3.8.2
+  * Added myself to Uploaders and copyright
+
+  [ gregor herrmann ]
+  * Activate another test in debian/{rules,control}.
+  * debian/control: remove Conflicts/Replaces: libcurl-easy-perl, this package
+    is not even in oldstable anymore and has no reverse dependencies.
+
+ -- Jonathan Yu <frequency@cpan.org>  Wed, 08 Jul 2009 12:57:55 -0400
+
+libwww-curl-perl (4.07-1) unstable; urgency=low
+
+  * New upstream release
+  * update copyright
+  * update dh7 usage
+
+ -- Ryan Niebur <ryanryan52@gmail.com>  Sun, 31 May 2009 13:57:41 -0700
+
+libwww-curl-perl (4.06-1) unstable; urgency=low
+
+  [ gregor herrmann ]
+  * debian/control: Changed: Switched Vcs-Browser field to ViewSVN
+    (source stanza).
+  * debian/control: Added: ${misc:Depends} to Depends: field.
+  * Build against libcurl4-gnutls-dev instead of libcurl4-openssl-dev, thanks
+    to Adrian Bunk for the bug report (closes: #520595).
+  * Set debhelper compatibility level to 7; adapt
+    debian/{control,compat,rules}.
+  * Set Standards-Version to 3.8.1 (no changes).
+  * debian/copyright: update formatting and information about several files.
+
+  [ Ryan Niebur ]
+  * New upstream release (Closes: #519841, #518942)
+  * Add myself to Uploaders
+  * update copyright for inc/*
+
+ -- Ryan Niebur <ryanryan52@gmail.com>  Wed, 08 Apr 2009 20:28:28 -0700
+
+libwww-curl-perl (4.05-1) unstable; urgency=low
+
+  [ Martín Ferrari ]
+  * Updating my email address
+
+  [ Jose Luis Rivas ]
+  * New upstream release
+  * debian/control:
+   + Standards-version bumped to 3.8.0 wo/ changes needed.
+   + Added me as co-maintainer
+   + Capitalized conflics and replaces.
+   + Removed quilt from Build-Depends
+   + Added libmodule-install-perl, libtest-pod-coverage-perl and
+   libtest-pod-perl as Build-Depend.
+  * debian/rules:
+   + Removed quilt.
+   + Re-enabled tests (but only ones that don't require internet connection or
+   needs a package that's not in the archive like t/meta.t).
+   + Now lib/WWW/Curl/Share.pm gets cleaned too and Makefile.old
+  * debian/NEWS:
+   + Deleted, no longer needed
+  * debian/patches:
+   + Deleted all the directory, is no longer used, upstream already merged
+   these changes in Makefile.PL and anyway is not used since 3.12-1.
+  * debian/copyright:
+   + Added license for inc/* files.
+
+  [ gregor herrmann ]
+  * Refresh debian/rules, no functional changes.
+  * debian/control: wrap long line.
+  * Add /me to Uploaders.
+
+ -- Jose Luis Rivas <ghostbar38@gmail.com>  Sun, 13 Jul 2008 18:23:44 -0430
+
+libwww-curl-perl (4.00-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Roberto C. Sanchez <roberto@debian.org>  Sun, 30 Mar 2008 15:49:35 -0400
+
+libwww-curl-perl (3.12-1) unstable; urgency=low
+
+  [ Joachim Breitner ]
+  * Removed myself from uploaders.
+
+  [ Roberto C. Sanchez ]
+  * Removed myself from uploaders.
+
+  [ Martín Ferrari ]
+  * New upstream release.
+  * debian/control: updating dependency and suggests to libcurl-openssl4-dev,
+    add myself to Uploaders.
+  * debian/patches/series: disabling Makefile.PL patch as it's unneeded now.
+
+ -- Martín Ferrari <martin.ferrari@gmail.com>  Mon, 17 Mar 2008 13:23:50 -0300
+
+libwww-curl-perl (3.02-3) unstable; urgency=low
+
+  [ gregor herrmann ]
+  * debian/control: Added: Vcs-Svn field (source stanza); Vcs-Browser
+    field (source stanza); Homepage field (source stanza). Removed:
+    Homepage pseudo-field (Description); XS-Vcs-Svn fields.
+  * debian/rules: delete /usr/share/perl5 only if it exists.
+  * debian/watch: use dist-based URL.
+  * Set debhelper compatibility level to 6.
+  * Set Standards-Version to 3.7.3 (no changes needed).
+  * Don't install test scripts as examples.
+  * debian/copyright:
+    - add copyright/license statements for different files
+    - convert to new format
+  * debian/rules:
+    - create install-stamp target and adjust dependencies
+    - use $@ for touching -stamp files
+    - add note why tests are not enabled (need local webserver and ssl
+      certificates)
+  * Split Niko's changes on Makefile.PL into Makefile.PL.patch and add quilt
+    framework.
+
+  [ Frank Lichtenheld ]
+  * debian/rules: Cleanup:
+    + don't define $(PERL) and then don't use it
+    + fix dependency of build-stamp on configure-stamp
+    + reorder clean target
+
+ -- Roberto C. Sanchez <roberto@debian.org>  Sat, 26 Jan 2008 14:57:40 -0500
+
+libwww-curl-perl (3.02-2) unstable; urgency=low
+
+  * Clean up unneeded dependencies.
+  * Upgrade to Standards-Version 3.7.2. No changes needed.
+  * Upgrade to debhelper compatibility level 5.
+  * Fix curl parameter list documentation in WWW::Curl::Easy.
+  * Don't ignore the return status of 'make clean'.
+
+ -- Niko Tyni <ntyni@iki.fi>  Tue, 26 Sep 2006 13:17:07 +0300
+
+libwww-curl-perl (3.02-1) unstable; urgency=low
+
+  * New upstream release. (Closes: #343544)
+  * Suggest and build-depend on libcurl3-openssl-dev. (Closes: #343541)
+  * Upgraded to Standards-Version 3.6.2. No changes needed.
+  * Added note about incompatible namespace changes to NEWS.Debian.
+  * Removed outdated lintian overrides.
+
+ -- Niko Tyni <ntyni@iki.fi>  Fri, 16 Dec 2005 23:16:17 +0200
+
+libwww-curl-perl (2.0-8) unstable; urgency=low
+
+  * Closes: #279459: please rebuild with libcurl3-dev as build dependency
+
+ -- Joachim Breitner <nomeata@debian.org>  Thu,  9 Dec 2004 15:27:33 +0100
+
+libwww-curl-perl (2.0-7) unstable; urgency=low
+
+  * Closes: #245606: FTBFS: Duplicate case values
+    thanks to Matt Kraai for the patch!
+
+ -- Joachim Breitner <nomeata@debian.org>  Sat, 24 Apr 2004 11:06:04 +0200
+
+libwww-curl-perl (2.0-6) unstable; urgency=low
+
+  * Corrected Maintainer e-Mail Address
+
+ -- Joachim Breitner <nomeata@debian.org>  Fri, 27 Feb 2004 12:35:37 +0100
+
+libwww-curl-perl (2.0-5) unstable; urgency=low
+
+  * Adopted orphaned package for Debian Perl Group (Closes: #228232)
+
+ -- Michael Zehrer <zehrer@zepan.org>  Sun, 01 Feb 2004 09:39:00 +0100
+
+libwww-curl-perl (2.0-4) unstable; urgency=low
+
+  * Upgraded to new standards version
+  * Updated build-depends to new versions of debhelper, perl, and libcurl2-dev
+
+ -- Deedra Waters <dmwaters@linuxpowered.com>  Sun, 10 Aug 2003 14:26:57 -0400
+
+libwww-curl-perl (2.0-3) unstable; urgency=low
+
+  * Added the perl module name to the description so that it would be easier to
+    search for the perl module
+
+ -- Deedra Waters <dmwaters@linuxpowered.com>  Tue,  3 Jun 2003 09:57:59 -0400
+
+libwww-curl-perl (2.0-2) unstable; urgency=low
+
+  * added a lintian override to ignore the warningsthat come from the
+    perl module when some things are installed into /usr/lib
+  * Added the two licenses to debian/copyright
+
+ -- Deedra Waters <dmwaters@linuxpowered.com>  Tue, 20 May 2003 01:22:22 -0400
+
+libwww-curl-perl (2.0-1) unstable; urgency=low
+
+  * New upstream release, replaces libcurl-easy-perl
+
+ -- Deedra Waters <dmwaters@linuxpowered.com>  Mon, 28 Apr 2003 07:37:43 -0400
+
+libcurl-easy-perl (1.35-5) unstable; urgency=low
+
+  * First official release as new maintainer (closes: #189624).
+  * Fixed things in the rules to make the package clean up nicer.
+
+ -- Deedra Waters <synrg-sponsoring-dmwaters@gluck.debian.org>  Wed, 23 Apr 2003 22:14:25 -0400
+
+libcurl-easy-perl (1.35-4) unstable; urgency=low
+
+  * Adopted this package from its former maintainer. This is my first
+    package.
+  * Fixed an error in its long description.
+
+ -- Deedra Waters <dmwaters@linuxpowered.com>  Tue, 22 Apr 2003 12:36:52 -0400
+
+libcurl-easy-perl (1.35-3) unstable; urgency=low
+
+  * Recompiled with a newer libcurl2 to enable new curl options.
+  * Changed section to perl.
+
+ -- Domenico Andreoli <cavok@debian.org>  Wed, 16 Apr 2003 02:46:54 +0200
+
+libcurl-easy-perl (1.35-2) unstable; urgency=low
+
+  * Updated build dependencies to libcurl2 >= 7.10.3-1 in order to
+    enable new curl options.
+  * It now suggests libcurl2-dev for documentation.
+  * Improved long description.
+
+ -- Domenico Andreoli <cavok@debian.org>  Tue, 21 Jan 2003 00:45:41 +0100
+
+libcurl-easy-perl (1.35-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Domenico Andreoli <cavok@debian.org>  Wed,  2 Oct 2002 01:16:27 +0200
+
+libcurl-easy-perl (1.34-1) unstable; urgency=low
+
+  * New upstream release.
+  * Build-depend on perl (>= 5.8.0-7), in order to use perlapi-5.8.0
+    (closes: #158943).
+
+ -- Domenico Andreoli <cavok@debian.org>  Mon,  2 Sep 2002 13:56:39 +0200
+
+libcurl-easy-perl (1.33-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Domenico Andreoli <cavok@debian.org>  Tue,  6 Aug 2002 05:34:00 +0200
+
+libcurl-easy-perl (1.31-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Domenico Andreoli <cavok@debian.org>  Wed, 17 Jul 2002 01:12:28 +0200
+
+libcurl-easy-perl (1.20-3) unstable; urgency=low
+
+  * It now depends on libcurl >> 7.9.8 in order to enable new curl
+    options.
+
+ -- Domenico Andreoli <cavok@debian.org>  Tue, 25 Jun 2002 23:17:51 +0200
+
+libcurl-easy-perl (1.20-2) unstable; urgency=low
+
+  * It now depends on libcurl >> 7.9.5 in order to enable new curl
+    options.
+
+ -- Domenico Andreoli <cavok@debian.org>  Tue, 12 Mar 2002 23:30:53 +0100
+
+libcurl-easy-perl (1.20-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Domenico Andreoli <cavok@debian.org>  Mon, 18 Feb 2002 15:59:55 +0100
+
+libcurl-easy-perl (1.1.9-2) unstable; urgency=low
+
+  * Build-Depends modified in order to make this build on a libcurl 7.9.3.
+
+ -- Domenico Andreoli <cavok@debian.org>  Tue, 29 Jan 2002 11:20:55 +0100
+
+libcurl-easy-perl (1.1.9-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Domenico Andreoli <cavok@debian.org>  Sat, 26 Jan 2002 12:25:48 +0100
+
+libcurl-easy-perl (1.1.8-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Domenico Andreoli <cavok@debian.org>  Wed, 26 Sep 2001 00:42:41 +0200
+
+libcurl-easy-perl (1.1.7-1) unstable; urgency=low
+
+  * Initial release (closes: #94367).
+
+ -- Domenico Andreoli <cavok@debian.org>  Thu, 20 Sep 2001 01:52:13 +0200

@@ -1,0 +1,9 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+%:
+	dh $@
+
+override_dh_auto_test:
+	dh_auto_test -- TEST_FILES="$(shell find t -wholename t/new -prune -prune -o -type f -iname *.t -print | grep --invert-match --file=debian/tests/pkg-perl/smoke-skip --fixed-strings)"

@@ -1,0 +1,22 @@
+Description: curl went multiarch.
+ Tell Makefile.PL about the new include directory.
+Origin: vendor
+Bug-Debian: https://bugs.debian.org/852853
+Forwarded: not-needed
+Author: gregor herrmann <gregoa@debian.org>
+Last-Update: 2017-01-28
+
+--- a/Makefile.PL
++++ b/Makefile.PL
+@@ -54,6 +54,11 @@
+ 	);
+ }
+ 
++# Add multiarch include path
++chomp( my $multiarchpath = '/usr/include/'
++        . qx(/usr/bin/dpkg-architecture -qDEB_HOST_MULTIARCH) );
++push @includes, $multiarchpath;
++
+ #
+ # Get curl to tell us where it is, if we can.
+ #

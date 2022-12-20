@@ -1,0 +1,4 @@
+Makefile.old
+curlopt-constants.c
+lib/WWW/Curl/Easy.pm
+lib/WWW/Curl/Share.pm
