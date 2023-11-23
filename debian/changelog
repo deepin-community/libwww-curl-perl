@@ -1,3 +1,9 @@
+libwww-curl-perl (4.17-deepin10) unstable; urgency=medium
+
+  * update version.
+
+ -- LiChengGang <lichenggang@uniontech.com>  Thu, 23 Nov 2023 19:54:32 +0800
+
 libwww-curl-perl (4.17-10) unstable; urgency=medium
 
   * Undo libmodule-install-perl:all, this breaks autobuilder.
