@@ -1,3 +1,6 @@
 Skip-preprocessor-symbol-only-CURL_STRICTER.patch
 curl-multiarch.patch
 WWW-Curl-4.17-RT130591.patch
+WWW-Curl-4.17-Work-around-a-macro-bug-in-curl-7.87.0.patch
+workaround_DEPRECAT.patch
+typo_therefore.patch

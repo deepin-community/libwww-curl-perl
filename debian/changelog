@@ -1,8 +1,31 @@
-libwww-curl-perl (4.17-deepin1) unstable; urgency=medium
+libwww-curl-perl (4.17-10) unstable; urgency=medium
 
-  * Rebuild
+  * Undo libmodule-install-perl:all, this breaks autobuilder.
 
- -- Deepin Packages Builder <packages@deepin.org>  Mon, 14 Nov 2022 17:46:59 +0800
+ -- Roland Rosenfeld <roland@debian.org>  Mon, 13 Feb 2023 21:13:35 +0100
+
+libwww-curl-perl (4.17-9) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Update standards version to 4.6.1, no changes needed.
+
+  [ Roland Rosenfeld ]
+  * Work around a macro bug in curl 7.87.0 (Closes: #1027632).
+  * Add myself to uploaders.
+  * Update standards version to 4.6.2 (no changes).
+  * Add salsa CI pipeline in debian/salsa-ci.yml.
+  * Fix a typo in the manpage.
+  * Build-Depends on libmodule-install-perl:all fix multi-arch build.
+
+ -- Roland Rosenfeld <roland@debian.org>  Mon, 13 Feb 2023 16:39:09 +0100
+
+libwww-curl-perl (4.17-8) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Apply multi-arch hints. + libwww-curl-perl: Add Multi-Arch: same.
+  * Update standards version to 4.5.1, no changes needed.
+
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Sun, 16 Oct 2022 04:45:14 +0100
 
 libwww-curl-perl (4.17-7) unstable; urgency=medium
 
