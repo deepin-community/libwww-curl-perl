@@ -1,0 +1,17 @@
+From: Roland Rosenfeld <roland@debian.org>
+Date: Sun, 12 Feb 2023 14:04:12 +0100
+Subject: Ignore undefined DEPRECAT macros from curl 7.87.0
+Bug-Debian: https://bugs.debian.org/1027632
+Forwarded: not-needed, since it's only a workaround until curl is fixed.
+
+--- a/Makefile.PL
++++ b/Makefile.PL
+@@ -132,7 +132,7 @@ if (!defined($curl_h)) {
+     close H;
+ 
+     for my $e (sort @syms) {
+-       if($e =~ /(OBSOLETE|^CURL_EXTERN|^CURL_WIN32\z|^CURLOPT\z|^CURL_STRICTER\z|^CURL_DID_MEMORY_FUNC_TYPEDEFS\z|_LAST\z|_LASTENTRY\z|^CURLINC_)/) {
++       if($e =~ /(OBSOLETE|^CURL_EXTERN|^CURL_WIN32\z|^CURLOPT\z|^CURL_STRICTER\z|^CURL_DID_MEMORY_FUNC_TYPEDEFS\z|_LAST\z|_LASTENTRY\z|^CURLINC_|DEPRECAT)/) {
+           next;
+        }
+        my ($group) = $e =~ m/^([^_]+_)/;
